@@ -5,11 +5,13 @@ on:
       - devel
       - master
       - main
+      - humble-devel
   pull_request:
     branches:
       - devel
       - master
       - main
+      - humble-devel
 jobs:
   distros:
     name: "${{ matrix.build }} on ${{ matrix.os }}"
@@ -18,7 +20,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-24.04]
-        build: ["humble", "jazzy"] # TODO , "kilted", "rolling"]
+        build: ["humble"] # TODO , "jazzy", "kilted", "rolling"]
     steps:
       - uses: actions/checkout@v6
       - uses: cachix/install-nix-action@v31
